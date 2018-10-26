@@ -1,18 +1,16 @@
-var small = 8;
-var medium = 12;
-var large = 16;
 var topping = .75;
 
-function Pizza() {
-  this.size = 0;
+function Pizza(size) {
+  this.size = size;
   this.toppings = 0;
   this.total = 0;
 }
 
-Pizza.prototype.toppingsCost = function() {
+Pizza.prototype.finalTotal = function() {
   var checkboxes = $("input:checkbox[name=topping]:checked");
   var countToppings = checkboxes.filter(':checked').length;
   this.toppings = (countToppings * topping);
+  this.total = (this.toppings + this.size);
 }
 
 
@@ -20,15 +18,15 @@ Pizza.prototype.toppingsCost = function() {
 $(document).ready(function(){
   $("form#pizza_order").submit(function(event){
     event.preventDefault();
-    var newPizza = new Pizza();
+    var size = parseInt($("#sizes").val());
+    var newPizza = new Pizza(size);
+
     $("#order-recap").show();
-    // var checkboxes = $("input:checkbox[name=topping]:checked");
-    // var countToppings = checkboxes.filter(':checked').length;
 
     $("input:checkbox[name=topping]:checked").each(function(){
       var yourToppings = $(this).val();
-      newPizza.toppingsCost()
-      console.log(newPizza.toppings);
+      newPizza.finalTotal();
+      console.log(newPizza.total);
       $('#order-recap').append(yourToppings + "<br>");
     });
     $('#pizza_order').hide();
