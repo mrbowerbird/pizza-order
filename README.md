@@ -10,7 +10,7 @@ _description_
 
 ## Setup/Installation Requirements
 
-* _Clone the project to your desktop at XXXXXX_
+* _Clone the project to your desktop at https://github.com/mrbowerbird/pizza-order.git_
 * _Open the index.html file in your web browser_
 
 # Program Specifications

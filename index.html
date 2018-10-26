@@ -16,22 +16,25 @@
         <div class="form-group">
           <label for="sizes">What size?</label>
           <select class="form-control" id="sizes">
-            <option value="8">Small</option>
-            <option value="12">Medium</option>
-            <option value="16">Large</option>
+            <option value="small">Small ($8)</option>
+            <option value="medium">Medium ($12)</option>
+            <option value="large">Large ($16)</option>
           </select>
-          <p>What toppings would you like? $.75 for each</p>
-          <input type="checkbox" name="topping" value="Perpperoni"> Perpperoni<br>
-          <input type="checkbox" name="topping" value="Sausage"> Sausage<br>
-          <input type="checkbox" name="topping" value="Bacon"> Bacon<br>
+          <div class="well">
+            <p>What toppings would you like? <b>$.75</b> each</p>
+            <input type="checkbox" name="topping" value="Perpperoni"> Perpperoni<br>
+            <input type="checkbox" name="topping" value="Sausage"> Sausage<br>
+            <input type="checkbox" name="topping" value="Bacon"> Bacon<br>
+            <input type="checkbox" name="topping" value="Olives"> Olives<br>
+            <input type="checkbox" name="topping" value="Green Pepper"> Green Pepper<br>
+            <input type="checkbox" name="topping" value="Onions"> Onions<br>
+          </div>
         </div>
        <button type="submit">Submit Order</button>
       </form>
       <span id="order-recap">
         <p><b>Your total is: $<span id="total-cost"></span></b></p>
-        <p><b>Your Pizza will have:</b></p>
-
-
+        <p><b>Your <em><span id="pizza-size"></span></em> pizza will have:</b></p>
       </span>
     </div>
   </body>
