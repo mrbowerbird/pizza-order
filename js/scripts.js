@@ -4,14 +4,15 @@ function Pizza(size) {
   this.size = size;
   this.toppings = 0;
   this.total = 0;
-}
+};
 
 Pizza.prototype.finalTotal = function() {
   var checkboxes = $("input:checkbox[name=topping]:checked");
   var countToppings = checkboxes.filter(':checked').length;
   this.toppings = (countToppings * topping);
   this.total = (this.toppings + this.size);
-}
+};
+
 
 
 
@@ -25,9 +26,9 @@ $(document).ready(function(){
 
     $("input:checkbox[name=topping]:checked").each(function(){
       var yourToppings = $(this).val();
-      newPizza.finalTotal();
-      console.log(newPizza.total);
       $('#order-recap').append(yourToppings + "<br>");
+      newPizza.finalTotal();
+      $('#total-cost').text(newPizza.total);
     });
     $('#pizza_order').hide();
   });
